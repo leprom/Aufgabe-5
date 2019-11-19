@@ -8,6 +8,7 @@ class LinkedList<E> {
         }
     }
 
+
     Node<E> head = new Node<E>(null);
     Node<E> tail = head;
     int size;
