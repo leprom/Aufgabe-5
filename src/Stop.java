@@ -17,8 +17,9 @@ public class Stop implements Comparable<Stop> {
     }
 
     public int compareTo(Stop o) {
-        if(this.capacity >= o.capacity){
-            return this.capacity;
-        }else return o.capacity;
+        if(this.capacity==o.capacity) return 0;
+        else if(this.capacity > o.capacity){
+            return 1;
+        }else return -1;
     }
 }

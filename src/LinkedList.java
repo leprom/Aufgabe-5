@@ -1,4 +1,10 @@
-class LinkedList<E> {
+import java.util.Iterator;
+
+class LinkedList<E> implements Iterable {
+
+
+
+
     static class Node<E> {
         E value;
         Node<E> next;
@@ -30,4 +36,28 @@ class LinkedList<E> {
 
         return node.value;
     }
+
+    Node<E> current = this.head;
+
+    @Override
+    public Iterator<E> iterator() {
+        //Node<E> head, tail,help = new Node<E>(null);
+
+        return new Iterator<E>() {
+            @Override
+            public boolean hasNext() {
+                return current.next != null;
+            }
+
+            @Override
+            public E next() {
+                Node<E> res=current.next;
+                current = current.next;
+                return res.value;
+            }
+        };
+    }
+
+
+
 }

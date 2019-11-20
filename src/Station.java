@@ -1,7 +1,5 @@
 public class Station extends Stop {
 
-    private int capacity;
-    private String name;
     private int exits;
 
 
